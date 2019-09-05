@@ -1,35 +1,57 @@
-# laravel-package-boilerplate
+# laravel-permission-blueprints
 
-Boilerplate for Laravel packages. Use it as a starting point for your own Laravel packages.
+Create json blueprints for your application roles and permissions to easily update permissions without having to run manual modifications or multiple seeders for your database.
+Built to be used with [spatie/laravel-permission](https://github.com/spatie/laravel-permission) laravel package.
 
-Includes PHPUnit and PHPCodeSniffer configuration, as well as a known good Travis CI configuration and a couple of base test cases. Uses `orchestra/testbench` as the basis of the provided base test.
+## Permissions
 
-Also includes my [Artisan Standalone](https://github.com/matthewbdaly/artisan-standalone) package as a development dependency. As a result, you should be able to run Artisan commands as follows:
+Create your permission json blueprint and set the path in config.
 
-```bash
-vendor/bin/artisan make:model Example
+```json
+[
+    "permission-1",
+    "permission-2",
+    "permission-3",
+    "permission-4"
+]
 ```
 
-How do I use it?
-----------------
-###### Step 1
-```bash
-composer create-project matthewbdaly/laravel-package-boilerplate <YOUR_NEW_PACKAGE_DIRECTORY>
+Update permissions using this command. Old permissions are removed and new ones are added.
+
+```
+php artisan permissions:update
 ```
 
-This will generate a starting boilerplate for your app.
 
-###### Step 2
-You'll want to update your `composer.json` with your required namespace and other details - you can do this by running
-```bash
- vendor/bin/artisan app:name InsertYourProjectNameHere
- ```
+## Roles
 
-Test cases
-----------
+Create your role json blueprint and set the path  in config.
 
-The package includes three test cases:
+```json
+[
+    {
+        "name": "superadmin",
+        "permissions": "all"
+    },
+    {
+        "name": "admin",
+        "permissions": [
+            "permission-1",
+            "permission-2",
+            "permission-3"
+        ]
+    },
+    {
+        "name": "user",
+        "permissions": [
+            "permission-1"
+        ]
+    }
+]
+```
 
-* `TestCase` - Effectively the normal Laravel test case. Use it the same way you would your normal Laravel test case
-* `SimpleTestCase` - Extends the default PHPUnit test case, so it doesn't set up a Laravel application, making it quicker and well-suited to properly isolated unit tests
-* `BrowserKitTestCase` - Sets up BrowserKit
+Update roles using this command. Old roles are removed and new ones are added. Additionally, permissions for each role are updated. This command also updates permissions first to make sure they exist before attempting to attach any permissions for roles.
+
+```
+php artisan roles:update
+```
