@@ -38,8 +38,8 @@ class PermissionServiceProvider extends BaseServiceProvider
         ], 'seeders');
 
         $this->publishes([
-            __DIR__.'/../templates/roles.php' => resource_path('roles.json'),
-            __DIR__.'/../templates/permissions.php' => resource_path('permission.json'),
+            __DIR__.'/../templates/roles.json' => resource_path('roles.json'),
+            __DIR__.'/../templates/permissions.json' => resource_path('permission.json'),
         ], 'examples');
 
         if ($this->app->runningInConsole()) {
