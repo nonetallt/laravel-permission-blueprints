@@ -13,7 +13,7 @@ use Nonetallt\Laravel\Permission\Blueprint\JsonRolesBlueprint;
 /**
  * Service provider
  */
-class ServiceProvider extends BaseServiceProvider
+class PermissionServiceProvider extends BaseServiceProvider
 {
     CONST CONFIG_FILE_NAME = 'permission_blueprints';
 

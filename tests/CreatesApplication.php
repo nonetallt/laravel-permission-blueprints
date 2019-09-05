@@ -3,7 +3,7 @@
 namespace Tests;
 
 use Hash;
-use Nonetallt\Laravel\Permission\Providers\ServiceProvider;
+use Nonetallt\Laravel\Permission\Providers\PermissionServiceProvider;
 use Nonetallt\Helpers\Testing\Traits\TestsFiles;
 
 trait CreatesApplication
@@ -12,7 +12,7 @@ trait CreatesApplication
 
     protected function getPackageProviders($app)
     {
-        return [ServiceProvider::class];
+        return [PermissionServiceProvider::class];
     }
 
     protected function getPackageAliases($app)
@@ -38,8 +38,8 @@ trait CreatesApplication
 
         /* Set config paths to base templates for testing purposes */
         config([
-            ServiceProvider::CONFIG_FILE_NAME . '.roles_path' => $this->getBasePath('src/templates/roles.json'),
-            ServiceProvider::CONFIG_FILE_NAME . '.permissions_path' => $this->getBasePath('src/templates/permissions.json'),
+            PermissionServiceProvider::CONFIG_FILE_NAME . '.roles_path' => $this->getBasePath('src/templates/roles.json'),
+            PermissionServiceProvider::CONFIG_FILE_NAME . '.permissions_path' => $this->getBasePath('src/templates/permissions.json'),
         ]);
     }
 
