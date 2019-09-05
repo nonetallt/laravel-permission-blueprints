@@ -52,15 +52,6 @@ class Role
             throw new \InvalidArgumentException($msg);
         }
 
-        $validPermissions = resolve(PermissionsBlueprint::class)->getPermissions();
-
-        foreach($permissions as $permission) {
-            if(! in_array($permission, $validPermissions)) {
-                $msg = "Permission '$permission' for role '$this->name' does not exist in the current permissions blueprint";
-                throw new PermissionException($msg);
-            }
-        }
-
         $this->permissions = $permissions;
     }
 
