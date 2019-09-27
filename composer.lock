@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c73881c2ea51a4bdda6e130f9d092f29",
+    "content-hash": "a903f05702c130afed8f901d6927ab76",
     "packages": [
         {
             "name": "doctrine/inflector",
@@ -938,16 +938,16 @@
         },
         {
             "name": "nonetallt/php-helpers",
-            "version": "0.19.0",
+            "version": "0.20.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nonetallt/php-helpers.git",
-                "reference": "dbfdb664b1bbb77d7d4298a50c3ba95c433ff653"
+                "reference": "419fbc7c0b94682a109b90c4922e438ff35a7fbb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nonetallt/php-helpers/zipball/dbfdb664b1bbb77d7d4298a50c3ba95c433ff653",
-                "reference": "dbfdb664b1bbb77d7d4298a50c3ba95c433ff653",
+                "url": "https://api.github.com/repos/nonetallt/php-helpers/zipball/419fbc7c0b94682a109b90c4922e438ff35a7fbb",
+                "reference": "419fbc7c0b94682a109b90c4922e438ff35a7fbb",
                 "shasum": ""
             },
             "require": {
@@ -988,7 +988,7 @@
             "keywords": [
                 "helpers"
             ],
-            "time": "2019-09-25T19:55:27+00:00"
+            "time": "2019-09-27T18:11:08+00:00"
         },
         {
             "name": "opis/closure",
